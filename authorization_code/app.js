@@ -5,8 +5,8 @@ var querystring = require("querystring");
 var cookieParser = require("cookie-parser");
 const fetch = require("node-fetch");
 const bodyParser = require("body-parser");
-//var client_id = "d41575df786a4290ae299be5a017a672";
-//var client_secret = "f0a7d7d069854799aba74e113d31db39";
+//var client_id = "client_id";
+//var client_secret = "client_secret";
 var redirect_uri = "http://localhost:8888/callback";
 let access_token = "";
 /**
