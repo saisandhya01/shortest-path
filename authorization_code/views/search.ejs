@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="artist-1">Artist 1: </label>
+        <input type="text" id="artist-1">
+        <label for="artist-2">Artist 2: </label>
+        <input type="text" id="artist-2">
+        <button type="submit" id="submit-name">SUBMIT</button>
+    </div>
+    <script>
+        let submitButton = document.getElementById('submit-name')
+        submitButton.onclick = () => {
+            let artist1name = document.getElementById('artist-1').value
+            let artist2name = document.getElementById('artist-2').value
+            sendNamesToServer(artist1name, artist2name)
+        }
+        function sendNamesToServer(name1, name2) {
+            const details = {
+                name1: name1,
+                name2: name2
+            }
+            var xhr = new window.XMLHttpRequest();
+            xhr.open('POST', '/names', true)
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
+            xhr.send(JSON.stringify(details));
+
+        }
+    </script>
+</body>
+
+</html>
