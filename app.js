@@ -208,6 +208,7 @@ async function call(id1, id2) {
   try {
     const result = await findShortestPath(id1, id2);
     console.log("Shortest path:", result);
+    return result;
   } catch (error) {
     console.log(error);
   }
@@ -253,7 +254,8 @@ app.post("/names", async (req, res) => {
     console.log("Artist 1 id:", id1);
     const id2 = await findId(details.name2);
     console.log("Artist 2 id:", id2);
-    call(id1, id2);
+    const result = await call(id1, id2);
+    res.render("search", { dist: result });
   } catch (error) {
     console.log(error);
   }

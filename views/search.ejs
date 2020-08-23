@@ -9,13 +9,17 @@
 
 <body>
     <div>
-        <label for="artist-1">Artist 1: </label>
-        <input type="text" id="artist-1">
-        <label for="artist-2">Artist 2: </label>
-        <input type="text" id="artist-2">
-        <button type="submit" id="submit-name">SUBMIT</button>
+        <form method="POST" action="/names">
+            <label for="artist-1">Artist 1: </label>
+            <input type="text" id="artist-1">
+            <label for="artist-2">Artist 2: </label>
+            <input type="text" id="artist-2">
+            <button type="submit" id="submit-name">SUBMIT</button>
+        </form>
+        <p>Shortest path is <%= typeof dist != 'undefined'? dist:'' %></p>
     </div>
     <script>
+        /*
         let submitButton = document.getElementById('submit-name')
         submitButton.onclick = () => {
             let artist1name = document.getElementById('artist-1').value
@@ -33,6 +37,7 @@
             xhr.send(JSON.stringify(details));
 
         }
+        */
     </script>
 </body>
 
